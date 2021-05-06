@@ -40,8 +40,6 @@ export default function Home({ markersData }) {
 */
 export async function getStaticProps() {
   const { data } = await axios.get('https://cartovis-server.herokuapp.com/hospitales');
-  // console.log(typeof data);
-  console.log(data);
 
   return {
     props: {
