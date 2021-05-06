@@ -1,0 +1,397 @@
+{
+  "geojson": {
+    "type": "FeatureCollection",
+    "features": [
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -44.75,
+            -23.7
+          ]
+        },
+        "properties": {
+          "time": "2021-01-01",
+          "popup": "<h1>address1</h1>",
+          "icon": "circle",
+          "iconstyle": {
+            "color": "green",
+            "fillColor": "green",
+            "fillOpacity": 0.6,
+            "stroke": "false",
+            "radius": 10
+          }
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.759,
+            -23.7
+          ]
+        },
+        "properties": {
+          "time": "2021-01-01",
+          "popup": "<h1>address1</h1>",
+          "icon": "circle",
+          "iconstyle": {
+            "color": "green",
+            "fillColor": "green",
+            "fillOpacity": 0.6,
+            "stroke": "false",
+            "radius": 20
+          }
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -52.75,
+            -23.709
+          ]
+        },
+        "properties": {
+          "time": "2021-01-01",
+          "popup": "<h1>address1</h1>",
+          "icon": "circle",
+          "iconstyle": {
+            "color": "green",
+            "fillColor": "green",
+            "fillOpacity": 0.6,
+            "stroke": "false",
+            "radius": 10
+          }
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -44.75,
+            -23.7
+          ]
+        },
+        "properties": {
+          "time": "2021-01-02",
+          "popup": "<h1>address1</h1>",
+          "icon": "circle",
+          "iconstyle": {
+            "color": "yellow",
+            "fillColor": "yellow",
+            "fillOpacity": 0.6,
+            "stroke": "false",
+            "radius": 10
+          }
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.759,
+            -23.7
+          ]
+        },
+        "properties": {
+          "time": "2021-01-02",
+          "popup": "<h1>address1</h1>",
+          "icon": "circle",
+          "iconstyle": {
+            "color": "yellow",
+            "fillColor": "yellow",
+            "fillOpacity": 0.6,
+            "stroke": "false",
+            "radius": 30
+          }
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -52.75,
+            -23.709
+          ]
+        },
+        "properties": {
+          "time": "2021-01-02",
+          "popup": "<h1>address1</h1>",
+          "icon": "circle",
+          "iconstyle": {
+            "color": "yellow",
+            "fillColor": "yellow",
+            "fillOpacity": 0.6,
+            "stroke": "false",
+            "radius": 10
+          }
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -44.75,
+            -23.7
+          ]
+        },
+        "properties": {
+          "time": "2021-01-03",
+          "popup": "<h1>address1</h1>",
+          "icon": "circle",
+          "iconstyle": {
+            "color": "yellow",
+            "fillColor": "yellow",
+            "fillOpacity": 0.6,
+            "stroke": "false",
+            "radius": 15
+          }
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.759,
+            -23.7
+          ]
+        },
+        "properties": {
+          "time": "2021-01-03",
+          "popup": "<h1>address1</h1>",
+          "icon": "circle",
+          "iconstyle": {
+            "color": "red",
+            "fillColor": "red",
+            "fillOpacity": 0.6,
+            "stroke": "false",
+            "radius": 30
+          }
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -52.75,
+            -23.709
+          ]
+        },
+        "properties": {
+          "time": "2021-01-03",
+          "popup": "<h1>address1</h1>",
+          "icon": "circle",
+          "iconstyle": {
+            "color": "yellow",
+            "fillColor": "yellow",
+            "fillOpacity": 0.6,
+            "stroke": "false",
+            "radius": 15
+          }
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -56.75,
+            -23.709
+          ]
+        },
+        "properties": {
+          "time": "2021-01-03",
+          "popup": "<h1>address1</h1>",
+          "icon": "circle",
+          "iconstyle": {
+            "color": "yellow",
+            "fillColor": "yellow",
+            "fillOpacity": 0.6,
+            "stroke": "false",
+            "radius": 10
+          }
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -44.75,
+            -23.7
+          ]
+        },
+        "properties": {
+          "time": "2021-01-04",
+          "popup": "<h1>address1</h1>",
+          "icon": "circle",
+          "iconstyle": {
+            "color": "green",
+            "fillColor": "green",
+            "fillOpacity": 0.6,
+            "stroke": "false",
+            "radius": 35
+          }
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -48.759,
+            -23.7
+          ]
+        },
+        "properties": {
+          "time": "2021-01-04",
+          "popup": "<h1>address1</h1>",
+          "icon": "circle",
+          "iconstyle": {
+            "color": "orange",
+            "fillColor": "orange",
+            "fillOpacity": 0.6,
+            "stroke": "false",
+            "radius": 30
+          }
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -52.75,
+            -23.709
+          ]
+        },
+        "properties": {
+          "time": "2021-01-04",
+          "popup": "<h1>address1</h1>",
+          "icon": "circle",
+          "iconstyle": {
+            "color": "green",
+            "fillColor": "green",
+            "fillOpacity": 0.6,
+            "stroke": "false",
+            "radius": 15
+          }
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -56.75,
+            -23.709
+          ]
+        },
+        "properties": {
+          "time": "2021-01-04",
+          "popup": "<h1>address1</h1>",
+          "icon": "circle",
+          "iconstyle": {
+            "color": "red",
+            "fillColor": "red",
+            "fillOpacity": 0.6,
+            "stroke": "false",
+            "radius": 50
+          }
+        }
+      }
+    ]
+  },
+  "collectors": [
+    {
+      "code": 10,
+      "cord_x": -29.59759444,
+      "cord_y": -54.68518333,
+      "spore_quantity": 4,
+      "description": "coletor 10",
+      "favorability": 6.49430494628369,
+      "favorability_message": "O ambiente está desfavorável a ferrugem da soja"
+    },
+    {
+      "code": 11,
+      "cord_x": -29.74666667,
+      "cord_y": -54.70235,
+      "spore_quantity": 31,
+      "description": "Coletor 11",
+      "favorability": 7.7556957362866,
+      "favorability_message": "O ambiente está desfavorável a ferrugem da soja"
+    },
+    {
+      "code": 12,
+      "cord_x": -29.33111944,
+      "cord_y": -55.53373056,
+      "spore_quantity": 66,
+      "description": "Coletor 12",
+      "favorability": 10.5966949558582,
+      "favorability_message": "O ambiente está desfavorável a ferrugem da soja"
+    }
+  ],
+  "daily_collectors_data": {
+    "2021-03-29": [
+      {
+        "collector": 10,
+        "date": "2021-03-29",
+        "favorability": 32.29
+      },
+      {
+        "collector": 11,
+        "date": "2021-03-29",
+        "favorability": 27.89
+      },
+      {
+        "collector": 12,
+        "date": "2021-03-29",
+        "favorability": 38.48
+      }
+    ],
+    "2021-03-30": [
+      {
+        "collector": 10,
+        "date": "2021-03-30",
+        "favorability": 32.29
+      },
+      {
+        "collector": 11,
+        "date": "2021-03-30",
+        "favorability": 27.89
+      },
+      {
+        "collector": 12,
+        "date": "2021-03-30",
+        "favorability": 38.48
+      }
+    ],
+    "2021-03-31": [
+      {
+        "collector": 10,
+        "date": "2021-03-31",
+        "favorability": 32.29
+      },
+      {
+        "collector": 11,
+        "date": "2021-03-31",
+        "favorability": 27.89
+      },
+      {
+        "collector": 12,
+        "date": "2021-03-31",
+        "favorability": 38.48
+      }
+    ]
+  }
+}
