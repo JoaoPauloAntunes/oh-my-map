@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { MapContainer, TileLayer, useMap } from "react-leaflet";
+import { MapContainer, TileLayer, GeoJSON } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import "leaflet-defaulticon-compatibility";
 import "leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility.css";
@@ -30,14 +30,14 @@ const Map = ({ markersData }) => {
         attribution='Map data &copy; <a href=&quot;https://www.openstreetmap.org/&quot;>OpenStreetMap</a> contributors, <a href=&quot;https://creativecommons.org/licenses/by-sa/2.0/&quot;>CC-BY-SA</a>, Imagery &copy; <a href=&quot;https://www.mapbox.com/&quot;>Mapbox</a>'
       />
       <LocationMarker />
-      <GeoJSONCluster data={markersData} />
-      <GeoJSONCluster data={geojsBrazilAm} />
-      <GeoJSONCluster data={geojsBrazilAp} />
-      <GeoJSONCluster data={geojsBrazilMa} />
-      <GeoJSONCluster data={geojsBrazilMs} />
-      <GeoJSONCluster data={geojsBrazilSc} />
-      <GeoJSONCluster data={geojsBrazilTo} />
-      <GeoJSONCluster data={geojsBrazilGoDf} />
+      <GeoJSON data={markersData} />
+      <GeoJSON data={geojsBrazilAm} />
+      <GeoJSON data={geojsBrazilAp} />
+      <GeoJSON data={geojsBrazilMa} />
+      <GeoJSON data={geojsBrazilMs} />
+      <GeoJSON data={geojsBrazilSc} />
+      <GeoJSON data={geojsBrazilTo} />
+      <GeoJSON data={geojsBrazilGoDf} />
     </MapContainer>
   )
 }
