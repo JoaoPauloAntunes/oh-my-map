@@ -45,6 +45,6 @@ export async function getStaticProps() {
     props: {
       markersData: data,
     },
-    revalidate: 60 * 60 * 8, // duração: 8h
+    // revalidate: 60 * 60 * 8, // duração: 8h
   }
 }
