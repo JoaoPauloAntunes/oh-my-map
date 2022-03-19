@@ -1,4 +1,3 @@
-// import { useEffect } from 'react';
 import { MapContainer, TileLayer, GeoJSON } from "react-leaflet";
 
 import "leaflet/dist/leaflet.css"
@@ -8,13 +7,13 @@ import "leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility
 import styles from './index.module.scss'
 
 const Map = ({ markersData }) => {
-  const geojsBrazilAm = require('../../../data/geojs-brazil-am.json');
-  const geojsBrazilAp = require('../../../data/geojs-brazil-ap.json');
-  const geojsBrazilMa = require('../../../data/geojs-brazil-ma.json');
-  const geojsBrazilMs = require('../../../data/geojs-brazil-ms.json');
-  const geojsBrazilSc = require('../../../data/geojs-brazil-sc.json');
-  const geojsBrazilTo = require('../../../data/geojs-brazil-to.json');
-  const geojsBrazilGoDf = require('../../../data/geojs-brazil-go-df.json');
+  const geojsBrazilAm = require('../../../../assets/geojs-brazil-am.json');
+  const geojsBrazilAp = require('../../../../assets/geojs-brazil-ap.json');
+  const geojsBrazilMa = require('../../../../assets/geojs-brazil-ma.json');
+  const geojsBrazilMs = require('../../../../assets/geojs-brazil-ms.json');
+  const geojsBrazilSc = require('../../../../assets/geojs-brazil-sc.json');
+  const geojsBrazilTo = require('../../../../assets/geojs-brazil-to.json');
+  const geojsBrazilGoDf = require('../../../../assets/geojs-brazil-go-df.json');
 
   return (
     <MapContainer
