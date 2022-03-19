@@ -3,10 +3,10 @@ import { useMap } from "react-leaflet";
 
 
 export default function GeoJSONCluster({ data }) {
-  const map = useMap();
+  const map = useMap()
 
-  const geoJson = new L.GeoJSON(data);
-  geoJson.addTo(map);
+  const geoJson = new L.GeoJSON(data)
+  geoJson.addTo(map)
 
   return null
 }
