@@ -9,6 +9,8 @@
     "server": "json-server server.json -w -d 750 -p 3333"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.1.0",
+    "@fortawesome/react-fontawesome": "^0.1.18",
     "@react-leaflet/core": "^1.0.2",
     "axios": "^0.21.1",
     "iso8601-js-period": "^0.2.1",
@@ -21,6 +23,7 @@
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-leaflet": "^3.1.0",
+    "react-leaflet-tracking-marker": "^1.0.11",
     "sass": "^1.32.12"
   }
 }
