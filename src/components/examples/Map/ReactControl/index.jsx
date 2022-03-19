@@ -7,11 +7,12 @@ import {
   useMapEvent,
 } from 'react-leaflet'
 import { useEventHandlers } from '@react-leaflet/core'
-import "leaflet/dist/leaflet.css";
-import "leaflet-defaulticon-compatibility";
-import "leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility.css";
 
-import styles from './index.module.scss';
+import "leaflet/dist/leaflet.css"
+import "leaflet-defaulticon-compatibility"
+import "leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility.css"
+
+import styles from './index.module.scss'
 
 // Classes used by Leaflet to position controls
 const POSITION_CLASSES = {

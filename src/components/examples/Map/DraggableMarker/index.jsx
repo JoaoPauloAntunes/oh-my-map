@@ -1,10 +1,11 @@
 import { useCallback, useMemo, useRef, useState } from 'react'
 import { MapContainer, Marker, Popup, TileLayer } from 'react-leaflet'
-import "leaflet/dist/leaflet.css";
-import "leaflet-defaulticon-compatibility";
-import "leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility.css";
 
-import styles from './index.module.scss';
+import "leaflet/dist/leaflet.css"
+import "leaflet-defaulticon-compatibility"
+import "leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility.css"
+
+import styles from './index.module.scss'
 
 
 const center = {
@@ -48,7 +49,7 @@ function DraggableMarker() {
   )
 }
 
-const DraggableMarkerMap = () => {
+const Map = () => {
   return (
     <MapContainer 
       className={styles.Map}
@@ -64,4 +65,4 @@ const DraggableMarkerMap = () => {
   )
 }
 
-export default DraggableMarkerMap
+export default Map

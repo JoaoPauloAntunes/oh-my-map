@@ -11,11 +11,11 @@ import {
   Rectangle,
 } from 'react-leaflet'
 
-import "leaflet/dist/leaflet.css";
-import "leaflet-defaulticon-compatibility";
-import "leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility.css";
+import "leaflet/dist/leaflet.css"
+import "leaflet-defaulticon-compatibility"
+import "leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility.css"
 
-import styles from './index.module.scss';
+import styles from './index.module.scss'
 
 
 const multiPolygon = [
@@ -66,7 +66,7 @@ function TooltipCircle() {
 
 const center = [51.505, -0.09];
 
-const TooltipsMap = () => {
+const Map = () => {
   return (
     <MapContainer 
       className={styles.Map}
@@ -100,4 +100,4 @@ const TooltipsMap = () => {
   )
 }
 
-export default TooltipsMap
+export default Map

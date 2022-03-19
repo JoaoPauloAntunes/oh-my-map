@@ -1,10 +1,11 @@
 import { useEffect, useRef, useState } from 'react'
 import { MapContainer, Pane, Rectangle, TileLayer } from 'react-leaflet'
-import "leaflet/dist/leaflet.css";
-import "leaflet-defaulticon-compatibility";
-import "leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility.css";
 
-import styles from './index.module.scss';
+import "leaflet/dist/leaflet.css"
+import "leaflet-defaulticon-compatibility"
+import "leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility.css"
+
+import styles from './index.module.scss'
 
 
 const outer = [
@@ -35,7 +36,7 @@ function BlinkingPane() {
   ) : null
 }
 
-const PanesMap = () => {
+const Map = () => {
   return (
     <MapContainer 
       className={styles.Map}
@@ -57,4 +58,4 @@ const PanesMap = () => {
   )
 }
 
-export default PanesMap
+export default Map

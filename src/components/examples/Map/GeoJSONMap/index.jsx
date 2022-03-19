@@ -1,10 +1,11 @@
 // import { useEffect } from 'react';
 import { MapContainer, TileLayer, GeoJSON } from "react-leaflet";
-import "leaflet/dist/leaflet.css";
-import "leaflet-defaulticon-compatibility";
-import "leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility.css";
 
-import styles from './index.module.scss';
+import "leaflet/dist/leaflet.css"
+import "leaflet-defaulticon-compatibility"
+import "leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility.css"
+
+import styles from './index.module.scss'
 
 const Map = ({ markersData }) => {
   const geojsBrazilAm = require('../../../data/geojs-brazil-am.json');

@@ -9,11 +9,12 @@ import {
   Rectangle,
   TileLayer,
 } from 'react-leaflet'
-import "leaflet/dist/leaflet.css";
-import "leaflet-defaulticon-compatibility";
-import "leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility.css";
 
-import styles from './index.module.scss';
+import "leaflet/dist/leaflet.css"
+import "leaflet-defaulticon-compatibility"
+import "leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility.css"
+
+import styles from './index.module.scss'
 
 
 const center = [51.505, -0.09]
@@ -22,7 +23,7 @@ const rectangle = [
   [51.5, -0.06],
 ]
 
-const LayersControlMap = () => {
+const Map = () => {
   return (
     <MapContainer 
       className={styles.Map}
@@ -83,4 +84,4 @@ const LayersControlMap = () => {
   )
 }
 
-export default LayersControlMap
+export default Map
