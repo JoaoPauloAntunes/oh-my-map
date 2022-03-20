@@ -17,6 +17,7 @@
     "jquery": "^3.6.0",
     "leaflet": "^1.7.1",
     "leaflet-defaulticon-compatibility": "^0.1.1",
+    "leaflet-geosearch": "^3.6.0",
     "leaflet-timedimension": "^1.1.1",
     "moment": "^2.29.1",
     "next": "^12.1.0",
