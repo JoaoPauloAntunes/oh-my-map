@@ -6,7 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "server": "json-server server.json -w -d 750 -p 3333"
+    "server": "json-server server.json -w -d 0 -p 3333"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.1.0",
@@ -17,14 +17,18 @@
     "jquery": "^3.6.0",
     "leaflet": "^1.7.1",
     "leaflet-defaulticon-compatibility": "^0.1.1",
+    "leaflet-draw": "^1.0.4",
     "leaflet-geosearch": "^3.6.0",
     "leaflet-timedimension": "^1.1.1",
+    "lodash": "^4.17.21",
     "moment": "^2.29.1",
     "next": "^12.1.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-leaflet": "^3.1.0",
+    "react-leaflet-draw": "^0.19.8",
     "react-leaflet-tracking-marker": "^1.0.11",
-    "sass": "^1.32.12"
+    "sass": "^1.32.12",
+    "uuid": "^8.3.2"
   }
 }
