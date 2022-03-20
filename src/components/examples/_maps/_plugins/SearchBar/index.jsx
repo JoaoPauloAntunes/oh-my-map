@@ -57,7 +57,7 @@ const SearchField = ({apiKey}) => {
     return null;
 };
 
-const Map = (props) => {
+const Map = () => {
   return (
     <MapContainer className={styles.Map} center={[50.5, 30.5]} zoom={13}>
       <TileLayer
