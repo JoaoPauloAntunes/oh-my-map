@@ -10,21 +10,37 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Getting Started
 
-First, run the development server:
-
+1. First, clone the repository to your local machine and navigate into the folder. For example:
 ```bash
-npm run dev
-# or
-yarn dev
+git clone https://github.com/JoaoPauloAntunes/oh-my-map.git
+cd oh-my-map
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Install all the dependencies:
+```bash
+yarn
+```
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+3. Edit your environment variables
+- Open the `.sample.env` file located at the root of the project
+- [Create a Mapbox account](https://account.mapbox.com/auth/signup/) and [copy your public access token](https://account.mapbox.com/access-tokens/)
+- Paste it in place of `123` for the `NEXT_PUBLIC_MAPBOX_KEY` variable. That line should now look like this:
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+```
+NEXT_PUBLIC_MAPBOX_KEY=pk.ey[...the rest of your access token...]
+```
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+- Rename the file "`.env`" (delete "`.sample`" from the file name)
+
+4. Then run the development server:
+
+```bash
+yarn dev
+# or
+npm run dev
+```
+
+And open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 ## Learn More
 
