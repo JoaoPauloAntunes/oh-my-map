@@ -3,10 +3,8 @@ import {
   MapContainer,
   TileLayer,
   FeatureGroup,
-  Circle,
 } from 'react-leaflet'
 import { EditControl } from "react-leaflet-draw"
-import axios from 'axios'
 
 import "leaflet/dist/leaflet.css"
 import "leaflet-defaulticon-compatibility"
@@ -43,8 +41,7 @@ export default class EditControlExample extends Component {
     } else {
       console.log('_onCreated: something else created:', type, e);
     }
-    // Do whatever else you need to. (save to db; etc)
-
+    
     this._onChange();
   };
 
@@ -114,9 +111,6 @@ export default class EditControlExample extends Component {
   _onFeatureGroupReady = (reactFGref) => {
     // populate the leaflet FeatureGroup with the geoJson layers
     const { geojsonData } = this.props;
-
-    // let leafletGeoJSON = new L.GeoJSON(geojsonData);
-    // console.log('leafletGeoJSON', leafletGeoJSON)
 
     let layers = createLayersFromJson(geojsonData.features)
     console.log('layers', layers)
