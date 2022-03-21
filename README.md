@@ -21,7 +21,7 @@ cd oh-my-map
 yarn
 ```
 
-3. Edit your environment variables
+3. Edit your environment variables:
 - Open the `.sample.env` file located at the root of the project
 - [Create a Mapbox account](https://account.mapbox.com/auth/signup/) and [copy your public access token](https://account.mapbox.com/access-tokens/)
 - Paste it in place of `123` for the `NEXT_PUBLIC_MAPBOX_KEY` variable. That line should now look like this:
@@ -31,6 +31,9 @@ NEXT_PUBLIC_MAPBOX_KEY=pk.ey[...the rest of your access token...]
 ```
 
 - Rename the file "`.env`" (delete "`.sample`" from the file name)
+
+3. Configure your server:
+- Rename the `.sample.server.json` file located at the root of the project to `server.json`
 
 4. Run the json-server server (test purpose):
 
