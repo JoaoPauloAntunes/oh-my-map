@@ -1,4 +1,5 @@
 {
+  "map_center": [37.8189, -122.4786],
   "geojson": {
     "type": "FeatureCollection",
     "features": [

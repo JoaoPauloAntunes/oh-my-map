@@ -19,6 +19,7 @@
     "leaflet-defaulticon-compatibility": "^0.1.1",
     "leaflet-draw": "^1.0.4",
     "leaflet-geosearch": "^3.6.0",
+    "leaflet-routing-machine": "^3.2.12",
     "leaflet-timedimension": "^1.1.1",
     "lodash": "^4.17.21",
     "moment": "^2.29.1",
@@ -30,5 +31,8 @@
     "react-leaflet-tracking-marker": "^1.0.11",
     "sass": "^1.32.12",
     "uuid": "^8.3.2"
+  },
+  "devDependencies": {
+    "@types/leaflet": "^1.7.9"
   }
 }
