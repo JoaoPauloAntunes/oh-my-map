@@ -49,15 +49,16 @@ export const SearchField = ({ apiKey }) => {
         return () => map.removeControl(searchControl);
     }, []);
     
-    map.on('geosearch/showlocation', () => {
+    map.on('geosearch/showlocation', async () => {
         async function updateMapCenter(mapCenter) {
-            console.log('mapCenter', mapCenter)
+            console.log('geosearch/showlocation mapCenter', mapCenter)
             const { data } = await api.patch("/map_config", {"center": mapCenter})
+            console.log('data', data)
             return data
         }
 
         const mapCenter = map.getCenter()
-        updateMapCenter([mapCenter.lat, mapCenter.lng])
+        await updateMapCenter([mapCenter.lat, mapCenter.lng])
     });
 
     return null;

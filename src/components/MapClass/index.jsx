@@ -1,11 +1,19 @@
 import React, {
   Component,
+  useRef,
+  useState,
+  useEffect,
+  useMemo,
+  useCallback,
 } from 'react';
 import {
   MapContainer,
   TileLayer,
   FeatureGroup,
+  useMapEvents,
+  MapConsumer,
 } from 'react-leaflet'
+import L from 'leaflet'
 import { EditControl } from "react-leaflet-draw"
 
 import "leaflet/dist/leaflet.css"
@@ -17,20 +25,45 @@ import styles from './index.module.scss'
 
 import { createLayersFromJson } from '../../utils/layerFromJson'
 import { SearchField } from '../SearchField'
+import { TextBoxControl } from '../TextBoxControl'
+
+
+function MapEvents({ parent }) {
+  const map = useMapEvents({
+    moveend: (e) => {
+      console.log('center:', map.getCenter())
+      parent._location = map.getCenter()
+    }
+  })
+
+  return null
+}
 
 
 export default class Map extends Component {
   // see http://leaflet.github.io/Leaflet.draw/docs/leaflet-draw-latest.html#l-draw-event for leaflet-draw events doc
   _editableFG = null
+  _mapCenter = null
+  _location = null
+
+  
 
   render() {
+    const {mapConfig, geojsonData} = this.props
+    const mapCenter = L.latLng(mapConfig.center[0], mapConfig.center[1])
+    this._location = mapCenter
+
     return (
-      <MapContainer className={styles.Map} center={[51.505, -0.09]} zoom={14}>
+      <MapContainer className={styles.Map} center={mapCenter} zoom={mapConfig.zoom}>
         <TileLayer
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
         <SearchField apiKey={process.env.NEXT_PUBLIC_MAPBOX_KEY} />
+        <MapEvents parent={this} />
+        <TextBoxControl position='bottomleft'>
+          {`LatLng: ${this._location.lat.toFixed(4)}, ${this._location.lat.toFixed(4)}`}
+        </TextBoxControl>
         <FeatureGroup
           ref={(reactFGref) => {
             this._onFeatureGroupReady(reactFGref);

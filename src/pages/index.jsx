@@ -1,17 +1,20 @@
 import dynamic from "next/dynamic";
 import { useMemo } from "react";
-import axios from 'axios';
+import { api } from '../services/api';
 
 import styles from './home.module.scss';
 
-export default function Home({ markersData }) {
+export default function Home({ geojsonData, mapConfig }) {
   /* Carrega a biblioteca dinamicamente
   O hook "useMemo" guarda o valor de retorno de uma função a partir dos valores de entrada.
   Se nada mudar no mapa, o valor de entrada, então a variável MapWithoutSSR recebe o 
   valor memorizado pelo React
   */
   const MapWithoutSSR = useMemo(
-    () => dynamic(() => import("../components/Map"), {
+    () => dynamic(() => import(
+      "../components/Map"
+      // "../components/_examples/_maps/_core/TextBoxControl1"
+    ), {
       ssr: false, // previne renderização do lado do servidor
       loading: () => <p>Loading map...</p>
     }),
@@ -20,7 +23,7 @@ export default function Home({ markersData }) {
 
   return (
     <div className={styles.homepage}>
-      <MapWithoutSSR markersData={markersData} />
+      <MapWithoutSSR mapConfig={mapConfig} geojsonData={geojsonData} />
     </div>
   );
 }
@@ -39,11 +42,20 @@ export default function Home({ markersData }) {
   quase sempre de forma instantânea.
 */
 export async function getStaticProps() {
-  const { data } = await axios.get('https://cartovis-server.herokuapp.com/hospitales');
+  async function getGeojson() {
+    const { data } = await api.get("/geojson")
+    return data
+  }
+
+  async function getMapConfig() {
+    const { data } = await api.get("/map_config")
+    return data
+  }
 
   return {
     props: {
-      markersData: data,
+      geojsonData: await getGeojson(),
+      mapConfig: await getMapConfig(),
     },
     // revalidate: 60 * 60 * 8, // duração: 8h
   }
