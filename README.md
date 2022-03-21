@@ -32,7 +32,15 @@ NEXT_PUBLIC_MAPBOX_KEY=pk.ey[...the rest of your access token...]
 
 - Rename the file "`.env`" (delete "`.sample`" from the file name)
 
-4. Then run the development server:
+4. Run the json-server server (test purpose):
+
+```bash
+yarn server
+# or
+npm run server
+```
+
+5. Then run the development server:
 
 ```bash
 yarn dev
