@@ -1,44 +1,83 @@
-// import { useEffect } from 'react';
-import { MapContainer, TileLayer, GeoJSON } from "react-leaflet";
-import "leaflet/dist/leaflet.css";
-import "leaflet-defaulticon-compatibility";
-import "leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility.css";
+import React, {
+  Component,
+  useRef,
+  useState,
+  useEffect,
+  useMemo,
+  useCallback,
+} from 'react';
+import {
+  MapContainer,
+  TileLayer,
+  FeatureGroup,
+  useMapEvents,
+  MapConsumer,
+} from 'react-leaflet'
+import L from 'leaflet'
+import { EditControl } from "react-leaflet-draw"
 
-import styles from './index.module.scss';
-import LocationMarker from "../LocationMarker";
+import "leaflet/dist/leaflet.css"
+import "leaflet-defaulticon-compatibility"
+import "leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility.css"
 
-const Map = ({ markersData }) => {
-  const geojsBrazilAm = require('../../data/geojs-brazil-am.json');
-  const geojsBrazilAp = require('../../data/geojs-brazil-ap.json');
-  const geojsBrazilMa = require('../../data/geojs-brazil-ma.json');
-  const geojsBrazilMs = require('../../data/geojs-brazil-ms.json');
-  const geojsBrazilSc = require('../../data/geojs-brazil-sc.json');
-  const geojsBrazilTo = require('../../data/geojs-brazil-to.json');
-  const geojsBrazilGoDf = require('../../data/geojs-brazil-go-df.json');
+import "/node_modules/leaflet-draw/dist/leaflet.draw.css"
+import styles from './index.module.scss'
+
+import { createLayersFromJson } from '../../utils/layerFromJson'
+import { SearchField } from '../SearchField'
+import { TextBoxControl } from '../TextBoxControl';
+
+
+function MapEvents({ setLocation }) {
+  const map = useMapEvents({
+    moveend: (e) => {
+      // console.log('center:', map.getCenter())
+      setLocation(map.getCenter())
+    }
+  })
+
+  return null
+}
+
+// function LocationControl({ mapCenter }) {
+//   const [location, setLocation] = useState(mapCenter)
+
+//   const map = useMapEvents({
+//     moveend: (e) => {
+//       console.log('center:', map.getCenter())
+//       setLocation(map.getCenter())
+//     }
+//   })
+
+//   return (
+//     <TextBoxControl position='bottomleft'>
+//       {`LatLng: ${location.lat.toFixed(4)}, ${location.lat.toFixed(4)}`}
+//     </TextBoxControl>
+//   )
+// }
+
+
+const Map = ({ mapConfig }) => {
+  const mapCenter = L.latLng(mapConfig.center[0], mapConfig.center[1])
+  const [location, setLocation] = useState(mapCenter)
+
+  useEffect(() => {
+    // console.log('location:', location)
+  }, [location])
 
   return (
-    <MapContainer
-      className={styles.Map}
-      center={[5.745327760058189, -28.28148209924439]}
-      zoom={4}
-      scrollWheelZoom={true}
-      timeDimension={true}
-    >
+    <MapContainer className={styles.Map} center={mapCenter} zoom={mapConfig.zoom}>
       <TileLayer
-        url={`https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png`}
-        attribution='Map data &copy; <a href=&quot;https://www.openstreetmap.org/&quot;>OpenStreetMap</a> contributors, <a href=&quot;https://creativecommons.org/licenses/by-sa/2.0/&quot;>CC-BY-SA</a>, Imagery &copy; <a href=&quot;https://www.mapbox.com/&quot;>Mapbox</a>'
+        attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
       />
-      <LocationMarker />
-      <GeoJSON data={markersData} />
-      <GeoJSON data={geojsBrazilAm} />
-      <GeoJSON data={geojsBrazilAp} />
-      <GeoJSON data={geojsBrazilMa} />
-      <GeoJSON data={geojsBrazilMs} />
-      <GeoJSON data={geojsBrazilSc} />
-      <GeoJSON data={geojsBrazilTo} />
-      <GeoJSON data={geojsBrazilGoDf} />
+      <SearchField apiKey={process.env.NEXT_PUBLIC_MAPBOX_KEY} />
+      <MapEvents setLocation={setLocation} />
+      <TextBoxControl position='bottomleft'>
+        {`LatLng: ${location.lat.toFixed(4)}, ${location.lat.toFixed(4)}`}
+      </TextBoxControl>
     </MapContainer>
   )
 }
 
-export default Map;
+export default Map
