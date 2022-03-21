@@ -31,7 +31,7 @@ import { TextBoxControl } from '../TextBoxControl';
 function MapEvents({ setLocation }) {
   const map = useMapEvents({
     moveend: (e) => {
-      // console.log('center:', map.getCenter())
+      console.log('center:', map.getCenter())
       setLocation(map.getCenter())
     }
   })
@@ -39,31 +39,69 @@ function MapEvents({ setLocation }) {
   return null
 }
 
-// function LocationControl({ mapCenter }) {
-//   const [location, setLocation] = useState(mapCenter)
-
-//   const map = useMapEvents({
-//     moveend: (e) => {
-//       console.log('center:', map.getCenter())
-//       setLocation(map.getCenter())
-//     }
-//   })
-
-//   return (
-//     <TextBoxControl position='bottomleft'>
-//       {`LatLng: ${location.lat.toFixed(4)}, ${location.lat.toFixed(4)}`}
-//     </TextBoxControl>
-//   )
-// }
-
-
-const Map = ({ mapConfig }) => {
+const Map = ({ mapConfig, geojsonData }) => {
   const mapCenter = L.latLng(mapConfig.center[0], mapConfig.center[1])
   const [location, setLocation] = useState(mapCenter)
+  const [editableFG, setEditableFG] = useState(null)
 
-  useEffect(() => {
-    // console.log('location:', location)
-  }, [location])
+
+  function handleEdited(e) {
+    let numEdited = 0;
+    e.layers.eachLayer((layer) => {
+      numEdited += 1;
+    });
+    console.log(`_onEdited: edited ${numEdited} layers`, e);
+
+    handleChange()
+  }
+
+  function handleChange() {
+    // this._editableFG contains the edited geometry, which can be manipulated through the leaflet API
+    if (!editableFG || !onChange) {
+      return
+    }
+
+    // make geojson data
+    const features = Object.values(this._editableFG._layers).map((layer) => {
+      console.log('layer', layer)
+
+      const json = layer.toGeoJSON()
+      console.log('json', json)
+
+      if (json.geometry.type == "Point" && layer._radius) {
+        json.properties = {
+          radius: layer._mRadius ? layer._mRadius : 75,
+        }
+      }
+
+      return json
+    })
+    const geojsonData = {
+      "type": "FeatureCollection",
+      "features": features
+    }
+    console.log('geojsonData', geojsonData)
+
+    // component callback
+    onChange(geojsonData)
+  }
+
+  function handleFeatureGroupReady(reactFGref) {
+    if (!reactFGref) {
+      return
+    }
+    // populate the leaflet FeatureGroup with the geoJson layers
+    const layers = createLayersFromJson(geojsonData.features)
+    console.log('layers', layers)
+
+    layers.forEach((layer) => {
+      reactFGref.addLayer(layer)
+    })
+
+    // store the ref for future access to content
+    setEditableFG(reactFGref)
+  }
+
 
   return (
     <MapContainer className={styles.Map} center={mapCenter} zoom={mapConfig.zoom}>
@@ -74,8 +112,28 @@ const Map = ({ mapConfig }) => {
       <SearchField apiKey={process.env.NEXT_PUBLIC_MAPBOX_KEY} />
       <MapEvents setLocation={setLocation} />
       <TextBoxControl position='bottomleft'>
-        {`LatLng: ${location.lat.toFixed(4)}, ${location.lat.toFixed(4)}`}
+        {`LatLng: ${location.lat.toFixed(4)}, ${location.lng.toFixed(4)}`}
       </TextBoxControl>
+      <FeatureGroup
+          ref={(reactFGref) => {
+            handleFeatureGroupReady(reactFGref)
+          }}
+        >
+          <EditControl
+            position="topright"
+            onEdited={handleEdited}
+            // onCreated={this._onCreated}
+            // onDeleted={this._onDeleted}
+            // onMounted={this._onMounted}
+            // onEditStart={this._onEditStart}
+            // onEditStop={this._onEditStop}
+            // onDeleteStart={this._onDeleteStart}
+            // onDeleteStop={this._onDeleteStop}
+            draw={{
+              rectangle: false,
+            }}
+          />
+        </FeatureGroup>
     </MapContainer>
   )
 }
